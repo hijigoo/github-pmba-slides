@@ -1343,6 +1343,7 @@ html[data-editing="true"] [contenteditable="true"] {
   .side-panel,dialog { display:none!important; }
 }
 #notesBtn,#notesPanel{display:none !important}
+.edit-toggle,.edit-hotzone{display:none !important}
 </style>
 </head>
 <body>
@@ -2406,7 +2407,7 @@ html[data-editing="true"] [contenteditable="true"] {
 <dialog id="helpDialog" aria-label="발표 단축키">
   <button class="panel-close" id="helpClose" type="button" aria-label="도움말 닫기">×</button>
   <h2>발표와 편집</h2>
-  <p>←/→ 이전·다음 장표(단계가 있으면 먼저 진행) · Space 다음 · O 목차 · N 노트 · S 출처 · F 전체화면 · E 글자 편집 · Ctrl/Cmd+S 저장 · Esc 닫기</p>
+  <p>←/→ 이전·다음 장표(단계가 있으면 먼저 진행) · Space 다음 · O 목차 · N 노트 · S 출처 · F 전체화면 · Ctrl/Cmd+S 저장 · Esc 닫기</p>
 </dialog>
 <div id="statusMessage" class="sr-only" role="status" aria-live="polite"></div>
 <script>
@@ -2871,7 +2872,6 @@ document.addEventListener("keydown", event => {
   if (target?.closest("input,textarea,select,[contenteditable='true']") ||
       outlineDialog.open || helpDialog.open || target?.closest(".side-panel")) return;
   if (target?.closest("button") && (key === " " || key === "enter")) return;
-  if (key === "e") { event.preventDefault(); toggleEditing(); return; }
   if (key === "o") {
     event.preventDefault(); closePanels(); renderOutline(); outlineDialog.showModal(); return;
   }

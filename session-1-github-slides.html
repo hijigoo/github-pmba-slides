@@ -915,6 +915,7 @@ dialog h2 { font-size:24px; margin:0 40px 20px 0; }
   .editable { outline:none !important; background:transparent !important; }
 }
 #notesBtn,#notesPanel{display:none !important}
+.edit-toggle,.edit-hotzone{display:none !important}
 </style>
 </head>
 <body>
@@ -1361,7 +1362,6 @@ SOFTWARE.
   <dl class="shortcut-grid">
     <dt>← / → / Space</dt><dd>이전·다음 장표</dd><dt>Home / End</dt><dd>처음·마지막 장표</dd>
     <dt>O / F</dt><dd>목차 / 전체화면</dd>
-    <dt>E</dt><dd>글자 편집 시작·마치기. 편집 중에는 입력 칸 밖에서 사용합니다.</dd>
     <dt>Ctrl/Cmd+S</dt><dd>수정한 내용을 포함한 HTML 다운로드</dd>
     <dt>분량</dt><dd>본편은 약 45분(44분 30초)입니다. 시간은 설명·질의·시연을 포함한 예상치입니다.</dd>
   </dl>
@@ -1663,7 +1663,6 @@ class SlidePresentation {
       if (event.target.closest('input,textarea,select,[contenteditable="true"]')) return;
       if (event.target.closest('button') && [' ', 'enter'].includes(key)) return;
       if (key === 'escape' && !this.notes.hidden) { this.toggleNotes(); return; }
-      if (key === 'e') { event.preventDefault(); this.toggleEditing(); return; }
       if (key === 'n') { event.preventDefault(); this.toggleNotes(); return; }
       if (key === 'o' || key === 'm') { this.renderOutline(); this.outline.showModal(); return; }
       if (key === '?' || key === 'h') { this.help.showModal(); return; }
