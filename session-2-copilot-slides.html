@@ -1342,7 +1342,7 @@ html[data-editing="true"] [contenteditable="true"] {
   .deck-controls,.progress-track,.edit-hotzone,.edit-toggle,
   .side-panel,dialog { display:none!important; }
 }
-#notesBtn,#notesPanel{display:none !important}
+#notesBtn,#notesPanel,#sourcesBtn,#sourcesPanel,#fullscreenBtn,#saveBtn,#helpBtn{display:none !important}
 .edit-toggle,.edit-hotzone{display:none !important}
 </style>
 </head>
@@ -2407,7 +2407,7 @@ html[data-editing="true"] [contenteditable="true"] {
 <dialog id="helpDialog" aria-label="발표 단축키">
   <button class="panel-close" id="helpClose" type="button" aria-label="도움말 닫기">×</button>
   <h2>발표와 편집</h2>
-  <p>←/→ 이전·다음 장표(단계가 있으면 먼저 진행) · Space 다음 · O 목차 · N 노트 · S 출처 · F 전체화면 · Ctrl/Cmd+S 저장 · Esc 닫기</p>
+  <p>←/→ 이전·다음 장표(단계가 있으면 먼저 진행) · Space 다음 · O 목차 · Esc 닫기</p>
 </dialog>
 <div id="statusMessage" class="sr-only" role="status" aria-live="polite"></div>
 <script>
@@ -2863,11 +2863,6 @@ editButton.addEventListener("click", toggleEditing);
 document.addEventListener("keydown", event => {
   const key = event.key.toLowerCase();
   const target = event.target instanceof Element ? event.target : null;
-  if ((event.ctrlKey || event.metaKey) && key === "s") {
-    event.preventDefault();
-    saveHtml();
-    return;
-  }
   if (event.key === "Escape") { closePanels(); return; }
   if (target?.closest("input,textarea,select,[contenteditable='true']") ||
       outlineDialog.open || helpDialog.open || target?.closest(".side-panel")) return;
@@ -2875,10 +2870,6 @@ document.addEventListener("keydown", event => {
   if (key === "o") {
     event.preventDefault(); closePanels(); renderOutline(); outlineDialog.showModal(); return;
   }
-  if (key === "?") { closePanels(); helpDialog.showModal(); return; }
-  if (key === "n") { togglePanel("notes"); return; }
-  if (key === "s") { togglePanel("sources"); return; }
-  if (key === "f") { toggleFullscreen(); return; }
   if (editing || !notesPanel.hidden || !sourcesPanel.hidden) return;
   if (["arrowright", "arrowdown", "pagedown", " "].includes(key)) {
     event.preventDefault();
