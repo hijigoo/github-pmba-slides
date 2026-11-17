@@ -1157,6 +1157,16 @@ h1,h2,h3,p { margin:0; }
   border:1px solid #d0d7de; border-radius:8px; }
 .delegation-pr-files strong { font-size:19px; }
 .delegation-pr-files p { margin:4px 0 0; color:#59636e; font-size:18px; }
+.delegation-pr-merge { margin-top:9px; border:1px solid #d0d7de; border-radius:8px; overflow:hidden; }
+.delegation-pr-merge-top { display:flex; align-items:center; justify-content:space-between; gap:14px; padding:8px 11px; }
+.delegation-pr-merge-top strong { display:block; font-size:19px; }
+.delegation-pr-merge-top p { margin:2px 0 0; color:#59636e; font-size:16px; }
+.delegation-pr-ready { flex:none; padding:6px 12px; border:1px solid #d0d7de; border-radius:6px; background:#f6f8fa; font-size:17px; font-weight:700; }
+.delegation-pr-merge-bottom { display:flex; align-items:center; gap:14px; padding:8px 11px; background:#f6f8fa; border-top:1px solid #d0d7de; }
+.delegation-pr-merge-bottom p { margin:0; color:#59636e; font-size:16px; }
+.delegation-pr-merge-btn { padding:6px 12px; border-radius:6px; background:#e6ebe8; color:#8c959f; font-size:17px; font-weight:700; }
+.delegation-pr-merge-btn i { font-style:normal; margin-left:10px; padding-left:10px; border-left:1px solid #c9d1d9; }
+.delegation-review-slide .delegation-pr-window { height:560px; }
 .delegation-review-slide .delegation-pr-main { padding:14px 22px; }
 .delegation-review-slide .delegation-pr-tabs { margin-top:9px; }
 .delegation-review-slide .security-pr-linked { margin-top:8px; padding:6px 12px; }
@@ -1779,7 +1789,7 @@ html[data-editing="true"] [contenteditable="true"] {
               <div class="delegation-pr-tabs"><strong>Conversation 2</strong><span>Commits 1</span><span>Checks 0</span><span>Files changed 3</span></div>
               <div class="security-pr-linked"><span>Related issue · #46</span><strong>미처리 상담 건수 표시</strong></div>
               <div class="delegation-pr-checks"><div><strong>워크플로 실행 승인 대기</strong><p>저장소 설정에 따라 검토 후 실행 승인이 필요할 수 있습니다.</p></div><span class="delegation-pr-check-cta">Approve workflows to run</span></div>
-              <div class="delegation-pr-files"><strong>변경 파일 3개 · 예시</strong><p>운영 화면 · 미처리 건수 계산 · 관련 테스트</p></div>
+              <div class="delegation-pr-merge"><div class="delegation-pr-merge-top"><div><strong>This pull request is still a work in progress</strong><p>Draft pull requests cannot be merged.</p></div><span class="delegation-pr-ready">Ready for review</span></div><div class="delegation-pr-merge-bottom"><span class="delegation-pr-merge-btn">Merge pull request <i>▾</i></span><p>Draft 해제·검사·검토 뒤 병합할 수 있습니다.</p></div></div>
             </div>
           </div>
           <div class="delegation-review-side">
