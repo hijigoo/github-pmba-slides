@@ -944,6 +944,23 @@ h1,h2,h3,p { margin:0; }
 .delivery-thread-side strong { color:#57606a; font-size:19px; }
 .delivery-thread-side p { margin-top:5px; font-size:19px; line-height:1.35; }
 
+/* === FOLLOW-UP CHAT COPY AND COPILOT RESULT TIMELINE === */
+#delivery-comment-draft .chat-browser { height:575px; }
+#delivery-comment-draft .chat-shell { height:469px; }
+#delivery-copilot-pr .delegation-pr-window { height:535px; }
+#delivery-copilot-pr .delivery-agent-start { margin-top:9px; }
+#delivery-copilot-pr .delivery-agent-start p { flex:1; min-width:0; }
+.delivery-view-session { flex:none; padding:6px 10px;
+  border:1px solid #d0d7de; border-radius:7px;
+  background:#f6f8fa; color:#1f2328;
+  font-size:16px; font-weight:750; line-height:1.4; white-space:nowrap; }
+.delivery-copilot-result { margin-top:9px; }
+.delivery-copilot-result .delivery-thread-event-head { gap:8px; }
+.delivery-copilot-result .delivery-thread-event-head small { margin-left:auto; }
+.delivery-copilot-ai-badge { padding:1px 6px;
+  border:1px solid #d0d7de; border-radius:999px;
+  color:#59636e; font-size:14px; font-weight:750; line-height:1.3; }
+
 /* === SECURITY FOLLOW-UP: COPILOT ISSUE DRAFT OR DIRECT ISSUE === */
 .issue-draft-browser .chat-full-main .chat-thread { padding:16px 34px 7px; }
 .issue-draft-browser .chat-user p { max-width:1100px;
@@ -1157,16 +1174,6 @@ h1,h2,h3,p { margin:0; }
   border:1px solid #d0d7de; border-radius:8px; }
 .delegation-pr-files strong { font-size:19px; }
 .delegation-pr-files p { margin:4px 0 0; color:#59636e; font-size:18px; }
-.delegation-pr-merge { margin-top:9px; border:1px solid #d0d7de; border-radius:8px; overflow:hidden; }
-.delegation-pr-merge-top { display:flex; align-items:center; justify-content:space-between; gap:14px; padding:8px 11px; }
-.delegation-pr-merge-top strong { display:block; font-size:19px; }
-.delegation-pr-merge-top p { margin:2px 0 0; color:#59636e; font-size:16px; }
-.delegation-pr-ready { flex:none; padding:6px 12px; border:1px solid #d0d7de; border-radius:6px; background:#f6f8fa; font-size:17px; font-weight:700; }
-.delegation-pr-merge-bottom { display:flex; align-items:center; gap:14px; padding:8px 11px; background:#f6f8fa; border-top:1px solid #d0d7de; }
-.delegation-pr-merge-bottom p { margin:0; color:#59636e; font-size:16px; }
-.delegation-pr-merge-btn { padding:6px 12px; border-radius:6px; background:#e6ebe8; color:#8c959f; font-size:17px; font-weight:700; }
-.delegation-pr-merge-btn i { font-style:normal; margin-left:10px; padding-left:10px; border-left:1px solid #c9d1d9; }
-.delegation-review-slide .delegation-pr-window { height:495px; }
 .delegation-review-slide .delegation-pr-main { padding:14px 22px; }
 .delegation-review-slide .delegation-pr-tabs { margin-top:9px; }
 .delegation-review-slide .security-pr-linked { margin-top:8px; padding:6px 12px; }
@@ -1187,6 +1194,34 @@ h1,h2,h3,p { margin:0; }
   border-left:4px solid #0969da; background:#edf3ff;
   color:var(--navy); font-size:21px; line-height:1.4;
   word-break:keep-all; }
+
+/* === SLIDE 13: DRAFT REVIEW AND MERGE CONTROLS === */
+.delegation-pr-review-status { margin-top:9px; overflow:hidden;
+  border:1px solid #d0d7de; border-radius:8px; }
+.delegation-pr-ready-row { display:flex; align-items:center;
+  gap:16px; padding:13px 15px; }
+.delegation-pr-ready-copy { flex:1; min-width:0; }
+.delegation-pr-ready-copy strong { display:block;
+  font-size:19px; line-height:1.35; }
+.delegation-pr-ready-copy p { margin:4px 0 0; color:#59636e;
+  font-size:17px; line-height:1.4; }
+.delegation-pr-ready-button,.delegation-pr-merge-button {
+  display:inline-flex; align-items:center; flex:none;
+  border:1px solid #d0d7de; border-radius:7px;
+  font-size:18px; font-weight:750; line-height:1.4; white-space:nowrap; }
+.delegation-pr-ready-button { padding:8px 13px;
+  background:#f6f8fa; color:#1f2328; }
+.delegation-pr-merge-row { display:flex; align-items:center;
+  gap:16px; padding:12px 15px; border-top:1px solid #d0d7de;
+  background:#f6f8fa; }
+.delegation-pr-merge-button { border-color:#d8dee4;
+  background:#eff2f5; color:#8c959f; }
+.delegation-pr-merge-button>span { padding:8px 13px; }
+.delegation-pr-merge-button>span+span { display:flex; align-items:center;
+  align-self:stretch; padding-inline:11px; border-left:1px solid #d8dee4;
+  font-size:12px; }
+.delegation-pr-merge-row>p { margin:0; color:#59636e;
+  font-size:17px; line-height:1.4; word-break:keep-all; }
 
 /* === SESSION 2: FOUR TAKEAWAYS === */
 .session-summary-body { position:absolute; top:170px;
@@ -1647,7 +1682,7 @@ html[data-editing="true"] [contenteditable="true"] {
         <div class="copilot-layout">
           <div class="copilot-prompt">
             <p class="copilot-prompt-label"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M9 10h30a4 4 0 0 1 4 4v19a4 4 0 0 1-4 4H20L9 43v-6a4 4 0 0 1-4-4V14a4 4 0 0 1 4-4Z"/><path d="M14 20h20M14 27h13"/></svg>GitHub Copilot Chat · 질문 예시</p>
-            <blockquote class="editable">“미처리 건수 표시 Issue 초안을 만들어 주세요.<br>완료 건 테스트 기준도 적어 주세요.”</blockquote>
+            <blockquote class="editable">“미처리 건수 표시 Issue 초안을<br>만들어 주세요. 완료 건<br>테스트 기준도 적어 주세요.”</blockquote>
           </div>
           <div class="copilot-detail">
             <h3>이렇게 진행해요</h3>
@@ -1655,7 +1690,7 @@ html[data-editing="true"] [contenteditable="true"] {
             <div class="copilot-detail-item"><h4>02 · Issue 작성·제출</h4><p class="editable">미처리 표시·완료 제외·테스트를 정리해 제출</p></div>
             <div class="copilot-detail-item"><h4>03 · 구현·PR 확인</h4><p class="editable">필요하면 Copilot에 할당하고 변경·검사를 확인</p></div>
           </div>
-          <p class="copilot-footnote editable">왼쪽은 요청 문구의 예시입니다. Issue는 사람이 확인·제출하고, 구현이 필요할 때만 Copilot에 할당합니다.</p>
+          <p class="copilot-footnote editable">왼쪽은 Issue 초안 요청 예시입니다. Issue는 사람이 확인·제출하고, 구현이 필요할 때만 Copilot에 할당합니다.</p>
         </div>
       </div>
       <footer class="cover-footer"><span>가상 사례 · 고객 문의 포털</span><b class="page-number"></b></footer>
@@ -1763,24 +1798,24 @@ html[data-editing="true"] [contenteditable="true"] {
             <p class="issue-compare-head">구현을 맡길지 결정</p>
             <div class="issue-choice"><h3>기록·조사만 할 때</h3><p class="editable">Issue로 남기고 사람이 판단합니다. <strong>Copilot 할당은 필수가 아닙니다.</strong></p></div>
             <div class="issue-choice"><h3>구현까지 필요할 때</h3><p class="editable">Assignees에 Copilot을 지정합니다. <strong>작업 PR #47을 열어 검토를 요청</strong>합니다.</p></div>
-            <p class="issue-note editable">Copilot 할당 뒤 PR #47이 열립니다. 다음 장에서 검사 결과 확인을 봅니다.</p>
+            <p class="issue-note editable">Copilot 할당 뒤 PR #47이 열립니다. 다음 장에서 구현 결과 확인과 검토 준비를 봅니다.</p>
           </div>
         </div>
       </div>
       <footer class="cover-footer"><span>가상 Issue #46 · 구현할 때 Copilot 할당 → PR #47</span><b class="page-number"></b></footer>
       <aside class="speaker-notes" hidden></aside>
     </section>
-    <section class="slide delegation-review-slide" id="delegation-pr-final-check" data-source="delegationReview" aria-label="Issue 46의 가상 PR 47에서 검사 결과를 확인하는 화면">
+    <section class="slide delegation-review-slide" id="delegation-pr-final-check" data-source="delegationReview" aria-label="가상 PR 47의 구현 결과 확인, Ready for review와 비활성화된 Merge pull request 버튼">
       <header class="cover-header">
         <div class="brand">GITHUB <span>COPILOT</span></div>
         <div class="audience">업무 담당자 / SESSION 02</div>
       </header>
       <div class="delegation-review-body">
-        <p class="walk-kicker">SESSION B · PR 검사 결과·최종 확인</p>
-        <h2 class="editable">검사 결과를 확인하고 최종 확인해요</h2>
-        <p class="walk-intro editable">Issue #46을 GitHub Copilot에 할당해 열린 가상 PR #47입니다. 검사 결과와 변경 내용을 확인합니다.</p>
+        <p class="walk-kicker">SESSION B · PR 결과 확인·검토 준비</p>
+        <h2 class="editable">구현 결과를 확인하고 검토를 준비해요</h2>
+        <p class="walk-intro editable">Issue #46을 GitHub Copilot에 할당해 열린 가상 PR #47입니다. 변경 내용과 동작을 확인한 뒤 검토·병합을 진행합니다.</p>
         <div class="delegation-review-grid">
-          <div class="github-window delegation-pr-window" aria-label="교육용 가상 GitHub Issue 46에서 열린 Draft Pull request 47 화면">
+          <div class="github-window delegation-pr-window" aria-label="교육용 가상 Draft PR 47의 변경 내용, 검토 준비와 병합 버튼">
             <div class="github-topbar"><strong class="github-wordmark">GitHub</strong><span class="github-repo">example-org / customer-support-portal</span></div>
             <div class="github-tabs"><span>Code</span><span>Issues</span><strong>Pull requests</strong><span>Actions</span><span>Security and quality</span></div>
             <div class="delegation-pr-main">
@@ -1788,19 +1823,28 @@ html[data-editing="true"] [contenteditable="true"] {
               <div class="delegation-pr-state"><span class="delegation-pr-draft">Draft</span><p>Copilot이 feature/pending-count → dev 병합을 요청했습니다.</p></div>
               <div class="delegation-pr-tabs"><strong>Conversation 2</strong><span>Commits 1</span><span>Checks 0</span><span>Files changed 3</span></div>
               <div class="security-pr-linked"><span>Related issue · #46</span><strong>미처리 상담 건수 표시</strong></div>
-              <div class="delegation-pr-merge"><div class="delegation-pr-merge-top"><div><strong>This pull request is still a work in progress</strong><p>Draft pull requests cannot be merged.</p></div><span class="delegation-pr-ready">Ready for review</span></div><div class="delegation-pr-merge-bottom"><span class="delegation-pr-merge-btn">Merge pull request <i>▾</i></span><p>Draft 해제·검사·검토 뒤 병합할 수 있습니다.</p></div></div>
+              <div class="delegation-pr-review-status">
+                <div class="delegation-pr-ready-row">
+                  <div class="delegation-pr-ready-copy"><strong>This pull request is still a work in progress</strong><p>Draft pull requests cannot be merged.</p></div>
+                  <span class="delegation-pr-ready-button">Ready for review</span>
+                </div>
+                <div class="delegation-pr-merge-row">
+                  <span class="delegation-pr-merge-button" role="button" aria-disabled="true"><span>Merge pull request</span><span aria-hidden="true">▼</span></span>
+                  <p>Draft 해제·검사·검토 뒤 병합할 수 있습니다.</p>
+                </div>
+              </div>
             </div>
           </div>
           <div class="delegation-review-side">
-            <h3>PR 최종 확인</h3>
-            <div class="delegation-review-point"><span>01</span><div><h4>변경 먼저 살피기</h4><p class="editable">Files changed와 워크플로를 먼저 확인합니다.</p></div></div>
-            <div class="delegation-review-point"><span>02</span><div><h4>검사 결과 확인</h4><p class="editable">Checks·Actions에서 검사 통과 여부를 확인합니다.</p></div></div>
-            <div class="delegation-review-point"><span>03</span><div><h4>동작 최종 확인</h4><p class="editable">미처리·완료 상태 동작을 요구사항과 대조합니다.</p></div></div>
-            <p class="delegation-review-note editable">검사 통과 ≠ PR 승인·병합. 요구사항과 결과를 사람이 최종 판단합니다.</p>
+            <h3>결과 확인부터 최종 병합까지</h3>
+            <div class="delegation-review-point"><span>01</span><div><h4>변경 먼저 살피기</h4><p class="editable">Files changed에서 코드·테스트와 구현 범위를 확인합니다.</p></div></div>
+            <div class="delegation-review-point"><span>02</span><div><h4>결과 최종 확인</h4><p class="editable">Checks·Actions의 검사 결과가 있으면 확인하고, 실제 동작을 대조합니다.</p></div></div>
+            <div class="delegation-review-point"><span>03</span><div><h4>검토 준비로 전환</h4><p class="editable">Ready for review로 Draft를 해제하고 사람의 검토를 요청합니다.</p></div></div>
+            <p class="delegation-review-note editable">Draft 해제는 병합이 아닙니다. 최종 검토 뒤 사람이 Merge pull request로 병합합니다.</p>
           </div>
         </div>
       </div>
-      <footer class="cover-footer"><span>가상 Issue #46 → Draft PR #47 · 검사 결과 → 최종 확인</span><b class="page-number"></b></footer>
+      <footer class="cover-footer"><span>가상 Issue #46 → Draft PR #47 · 변경·결과 확인 → 검토 준비 → 최종 병합</span><b class="page-number"></b></footer>
       <aside class="speaker-notes" hidden></aside>
     </section>
     <section class="slide session-divider" id="session-delivery" data-source="delivery" aria-label="개발 결과 확인 세션 시작">
@@ -1870,10 +1914,10 @@ html[data-editing="true"] [contenteditable="true"] {
             <blockquote class="editable">“요청한 기능이 반영됐나요?<br>어떤 근거로 확인하나요?”</blockquote>
           </div>
           <div class="copilot-detail">
-            <h3>확인할 세 가지 근거</h3>
-            <div class="copilot-detail-item"><h4>현재 상태</h4><p class="editable">Open·Closed(미병합)·Merged와 대상 브랜치</p></div>
-            <div class="copilot-detail-item"><h4>요구 반영</h4><p class="editable">Files changed에서 기간 검색·‘결과 없음’ 안내와 관련 테스트</p></div>
-            <div class="copilot-detail-item"><h4>검사 결과</h4><p class="editable">Checks와 Actions에서 실행된 검사·실패 여부·로그</p></div>
+            <h3>이렇게 진행해요</h3>
+            <div class="copilot-detail-item"><h4>01 · PR 내용 파악</h4><p class="editable">추가된 기능과 테스트 결과를 Copilot에게 질문</p></div>
+            <div class="copilot-detail-item"><h4>02 · 보완 댓글 요청</h4><p class="editable">빠진 동작·테스트를 댓글로 정리해 달라고 요청</p></div>
+            <div class="copilot-detail-item"><h4>03 · 수정 결과 확인</h4><p class="editable">필요하면 새 @copilot 댓글로 보완을 맡기고 다시 검토</p></div>
           </div>
           <p class="copilot-footnote editable">PR 화면 오른쪽 위에서 Copilot Chat을 열면 해당 PR이 질문 맥락으로 붙습니다. 답변이나 검사 통과만으로 완료를 판정하지 않습니다.</p>
         </div>
@@ -1995,7 +2039,7 @@ html[data-editing="true"] [contenteditable="true"] {
               <div class="chat-panel-header"><span class="chat-bot-mark"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="4"/><path d="M8 11h1m6 0h1"/></svg></span><strong>Copilot Chat</strong><span class="chat-panel-actions">⋯ &nbsp;×</span></div>
               <div class="chat-scope"><span>첨부된 PR</span><strong>#42 상담 내역 찾기 개선</strong></div>
               <div class="chat-thread">
-                <div class="chat-user"><p class="editable">PR #42에 0건 안내 동작과 테스트를 확인하고, 없으면 보완을 요청하는 댓글을 남겨 주세요.</p><span class="chat-user-avatar">나</span></div>
+                <div class="chat-user"><p class="editable">PR #42에서 검색 결과가 없을 때 안내 문구가 나오는지와 관련 테스트를 확인하고, 없으면 보완을 요청하는 댓글을 남겨 주세요.</p><span class="chat-user-avatar">나</span></div>
                 <div class="delivery-comment-action"><p>Add comment to issue or pull request</p><div class="delivery-comment-action-result"><span aria-hidden="true">↗</span><div><strong>Comment on PR #42</strong><small>Posted</small></div></div></div>
                 <div class="chat-answer"><span class="chat-bot-mark"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="4"/><path d="M8 11h1m6 0h1"/></svg></span><div class="chat-answer-body"><strong>Copilot</strong><small>교육용 게시 완료</small><p class="editable">요청하신 내용을 PR 댓글로 남겼습니다.</p></div></div>
               </div>
@@ -2074,42 +2118,42 @@ html[data-editing="true"] [contenteditable="true"] {
       <footer class="cover-footer"><span>👀 멘션 확인 → Copilot 작업 시작 · 결과는 PR #42에서 확인</span><b class="page-number"></b></footer>
       <aside class="speaker-notes" hidden></aside>
     </section>
-    <section class="slide delivery-followup-slide" id="delivery-copilot-pr" data-source="prComments" aria-label="PR 42의 @copilot 댓글 요청 뒤 같은 PR에 수정 커밋이 추가된 화면">
+    <section class="slide delivery-followup-slide" id="delivery-copilot-pr" data-source="prComments" aria-label="PR 42의 @copilot 요청 뒤 작업 시작 기록과 Copilot의 보완 결과 댓글을 보여 주는 가상 화면">
       <header class="cover-header">
         <div class="brand">GITHUB <span>COPILOT</span></div>
         <div class="audience">업무 담당자 / SESSION 02</div>
       </header>
       <div class="delegation-review-body">
-        <p class="walk-kicker">SESSION C · GitHub Copilot의 보완 제안</p>
+        <p class="walk-kicker">SESSION C · GitHub Copilot의 보완 결과</p>
         <h2 class="editable">GitHub Copilot이 기존 PR을 보완했어요</h2>
         <p class="walk-intro editable">@copilot 요청 뒤 feature/search에 수정 커밋이 추가돼 기존 PR #42가 갱신됐습니다.</p>
         <div class="delegation-review-grid">
-          <div class="github-window delegation-pr-window security-pr-window" aria-label="교육용 가상 Copilot 수정 커밋이 추가된 기존 Pull request 42 화면">
+          <div class="github-window delegation-pr-window security-pr-window" aria-label="교육용 가상 PR 42의 Copilot 작업 시작 기록과 보완 결과 댓글">
             <div class="github-topbar"><strong class="github-wordmark">GitHub</strong><span class="github-repo">example-org / customer-support-portal</span></div>
             <div class="github-tabs"><span>Code</span><span>Issues</span><strong>Pull requests</strong><span>Actions</span><span>Security and quality</span></div>
             <div class="delegation-pr-main">
               <div class="delegation-pr-heading"><h3>상담 내역 찾기 개선</h3><small>#42</small></div>
               <div class="delegation-pr-state"><span class="github-open">Open</span><p>vendor-team · feature/search → dev · Copilot이 수정 커밋을 추가했습니다.</p></div>
               <div class="delegation-pr-tabs"><strong>Conversation 5</strong><span>Commits 3</span><span>Checks 0</span><span>Files changed 5</span></div>
-              <div class="security-pr-linked"><span>Updated PR · #42</span><strong>@copilot 댓글의 0건 안내·테스트 보완</strong></div>
+              <div class="security-pr-linked"><span>Updated PR · #42</span><strong>검색 결과가 없을 때 안내 문구·테스트 보완</strong></div>
               <div class="delivery-pr-pending"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-5 3-8 8-8s8 3 8 8"/></svg><strong>1 pending review</strong><span aria-hidden="true">›</span></div>
-              <div class="delivery-pr-approval">
-                <span class="delivery-pr-approval-icon" aria-hidden="true"><svg viewBox="0 0 42 42"><circle cx="21" cy="21" r="20" fill="#9a6700"/><path d="M21 10 34 32H8Z" fill="#fff"/><path d="M21 17v7m0 4h.01" stroke="#9a6700" stroke-width="2.7" stroke-linecap="round"/></svg></span>
-                <div class="delivery-pr-approval-copy"><strong>2 workflows awaiting approval</strong><p>This workflow requires approval from a maintainer. <span>Learn more about approving workflows.</span></p></div>
-                <span class="delegation-pr-check-cta">Approve workflows to run</span>
+              <div class="delivery-agent-start"><span class="delivery-agent-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="7" cy="5" r="2"/><circle cx="7" cy="19" r="2"/><circle cx="19" cy="12" r="2"/><path d="M7 7v10M7 9c0 3 3 3 10 3"/></svg></span><p><strong>Copilot</strong> started work on behalf of <strong>portal-reviewer</strong> <span class="delivery-agent-when">now</span></p><span class="delivery-view-session">View session</span></div>
+              <div class="delivery-thread-event delivery-copilot-result">
+                <div class="delivery-thread-event-head"><strong>Copilot</strong><span class="delivery-copilot-ai-badge">AI</span><small>commented now · 예시</small></div>
+                <p class="editable">검색 결과가 없을 때 안내 문구를 표시하고 관련 테스트를 추가했습니다. 같은 PR에 수정 커밋을 반영했습니다.</p>
               </div>
             </div>
           </div>
           <div class="delegation-review-side">
             <h3>갱신된 PR에서 확인할 것</h3>
-            <div class="delegation-review-point"><span>01</span><div><h4>댓글 요청 기준</h4><p class="editable">0건 안내 동작과 테스트가 보완됐나요?</p></div></div>
+            <div class="delegation-review-point"><span>01</span><div><h4>댓글 요청 기준</h4><p class="editable">검색 결과가 없을 때 안내 문구가 나오고 테스트가 추가됐나요?</p></div></div>
             <div class="delegation-review-point"><span>02</span><div><h4>같은 PR #42</h4><p class="editable">feature/search에 새 커밋이 추가됐나요?</p></div></div>
-            <div class="delegation-review-point"><span>03</span><div><h4>검사 승인·재검토</h4><p class="editable">변경을 본 뒤 검사 실행을 승인하고 새 Checks를 확인합니다.</p></div></div>
-            <p class="delegation-review-note editable">워크플로 실행 승인 ≠ PR 승인·병합. 최신 결과는 사람이 확인합니다.</p>
+            <div class="delegation-review-point"><span>03</span><div><h4>작업 기록·결과 확인</h4><p class="editable">View session과 Copilot 댓글을 보고 최신 변경·검사를 확인합니다.</p></div></div>
+            <p class="delegation-review-note editable">Copilot 댓글만으로 완료를 단정하지 않습니다. 최종 확인과 병합은 사람이 합니다.</p>
           </div>
         </div>
       </div>
-      <footer class="cover-footer"><span>교육용 가상 PR #42 → @copilot 요청 → 같은 PR에 수정 커밋</span><b class="page-number"></b></footer>
+      <footer class="cover-footer"><span>교육용 가상 PR #42 · 작업 시작 → 보완 댓글·새 커밋 → 사람이 재검토</span><b class="page-number"></b></footer>
       <aside class="speaker-notes" hidden></aside>
     </section>
     <section class="slide session-divider" id="session-security" data-source="security" aria-label="보안 점검 세션 시작">
@@ -2179,10 +2223,10 @@ html[data-editing="true"] [contenteditable="true"] {
             <blockquote class="editable">“이 보안 경고는 무엇을 뜻하나요?<br>영향과 조치 상태는 어떤가요?”</blockquote>
           </div>
           <div class="copilot-detail">
-            <h3>확인할 세 가지 근거</h3>
-            <div class="copilot-detail-item"><h4>경고 원본</h4><p class="editable">CodeQL 규칙 · 파일·라인 · 심각도</p></div>
-            <div class="copilot-detail-item"><h4>조치 현황</h4><p class="editable">Open·Fixed·Dismissed 상태와 관련 PR</p></div>
-            <div class="copilot-detail-item"><h4>실제 영향</h4><p class="editable">입력값이 파일 경로에 닿는지 · 재분석 결과</p></div>
+            <h3>이렇게 진행해요</h3>
+            <div class="copilot-detail-item"><h4>01 · 경고 내용 파악</h4><p class="editable">경고 원본을 보고 Copilot에게 뜻과 영향을 질문</p></div>
+            <div class="copilot-detail-item"><h4>02 · 조사할 일 정리</h4><p class="editable">확인할 내용과 조치할 일을 Issue로 정리</p></div>
+            <div class="copilot-detail-item"><h4>03 · 수정 결과 확인</h4><p class="editable">필요하면 Copilot에 수정을 맡기고 경고를 다시 검사</p></div>
           </div>
           <p class="copilot-footnote editable">경고 접근 권한이 필요합니다. GitHub Copilot이 찾지 못하면 민감 정보를 뺀 허용된 요약만 전달하고, 답변은 원본과 대조합니다.</p>
         </div>
@@ -2364,7 +2408,7 @@ html[data-editing="true"] [contenteditable="true"] {
       <footer class="cover-footer"><span>가상 Issue #40 → PR #41 · 실제 결과 아님</span><b class="page-number"></b></footer>
       <aside class="speaker-notes" hidden></aside>
     </section>
-    <section class="slide session-summary-slide" id="session-summary" data-source="sessionSummary" aria-label="Copilot을 이용한 자동화 핵심 내용 정리">
+    <section class="slide session-summary-slide" id="session-summary" data-source="sessionSummary" aria-label="GitHub Copilot으로 자동화할 네 가지 업무">
       <header class="cover-header">
         <div class="brand">GITHUB <span>COPILOT</span></div>
         <div class="audience">업무 담당자 / SESSION 02</div>
@@ -2384,7 +2428,7 @@ html[data-editing="true"] [contenteditable="true"] {
       <footer class="cover-footer"><span>Copilot 업무 자동화 · 교육용 가상 사례</span><b class="page-number"></b></footer>
       <aside class="speaker-notes" hidden></aside>
     </section>
-  </main>
+    </main>
 </div>
 <nav class="deck-controls" aria-label="발표 제어">
   <button id="prevBtn" type="button" aria-label="이전 단계 또는 슬라이드" title="이전 단계/슬라이드 · ←">←</button>
