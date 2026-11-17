@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>워크샵 세션 소개</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<style>
+/* === THEME === */
+:root {
+    --stage-bg: #0b1020;
+    --slide-bg: #f6f7fc;
+    --ink: #151a33;
+    --muted: #5b6285;
+    --violet: #6d4ee0;
+    --blue: #2f7df6;
+    --green: #2faa6a;
+    --font: 'Pretendard', 'Apple SD Gothic Neo', sans-serif;
+}
+
+/* === FIXED STAGE BASE (viewport-base.css) === */
+html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; background: var(--stage-bg, #000); }
+.deck-viewport { position: fixed; inset: 0; overflow: hidden; background: var(--stage-bg, #000); }
+.deck-stage { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; overflow: hidden; transform-origin: 0 0; background: var(--slide-bg, #fff); }
+.slide { position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: hidden; display: block; visibility: hidden; opacity: 0; pointer-events: none; background: var(--slide-bg, #fff); }
+.slide.active, .slide.visible { visibility: visible; opacity: 1; pointer-events: auto; z-index: 1; }
+img, video, canvas, svg { max-width: 100%; max-height: 100%; }
+@media print {
+    html, body { width: 1920px; height: auto; overflow: visible; background: #fff; }
+    .deck-viewport { position: static; overflow: visible; background: #fff; }
+    .deck-stage { position: static; width: auto; height: auto; transform: none !important; background: none; }
+    .slide { position: relative; display: block !important; visibility: visible !important; opacity: 1 !important; pointer-events: auto !important; width: 1920px; height: 1080px; break-after: page; }
+}
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.2s !important; }
+}
+
+/* === SLIDE LAYOUT === */
+.slide { font-family: var(--font); color: var(--ink);
+    background:
+        radial-gradient(900px 600px at 8% 0%, rgba(109,78,224,.14), transparent 60%),
+        radial-gradient(900px 600px at 55% 100%, rgba(47,125,246,.12), transparent 60%),
+        radial-gradient(900px 600px at 100% 10%, rgba(47,170,106,.14), transparent 60%),
+        #f6f7fc; }
+.wrap { position: absolute; inset: 0; padding: 90px 120px; display: flex; flex-direction: column; }
+
+.eyebrow { font-size: 26px; font-weight: 700; letter-spacing: .14em; color: var(--violet); }
+.headline { margin: 22px 0 0; font-size: 68px; line-height: 1.28; font-weight: 800; letter-spacing: -0.03em; }
+.headline em { font-style: normal; background: linear-gradient(90deg, var(--violet), var(--blue) 55%, var(--green)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+/* Flow chips: 요구사항 → 개발 → 리뷰 → 배포 */
+.flow { margin-top: 36px; display: flex; align-items: center; gap: 16px; font-size: 28px; font-weight: 600; color: var(--muted); }
+.flow span.chip { padding: 10px 26px; border-radius: 999px; background: #fff; border: 2px solid #dfe3f5; color: var(--ink); }
+.flow span.arrow { color: #aab1d6; }
+.flow span.auto { margin-left: 14px; padding: 10px 26px; border-radius: 999px; background: var(--ink); color: #fff; }
+
+/* === SESSION CARDS === */
+.cards { margin-top: auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px; }
+.card { position: relative; border-radius: 36px; padding: 44px 48px 48px; background: #fff; box-shadow: 0 24px 60px -28px rgba(30,40,100,.35); border-top: 10px solid var(--c); min-height: 330px; box-sizing: border-box; }
+.card.s1 { --c: var(--violet); }
+.card.s2 { --c: var(--blue); }
+.card.s3 { --c: var(--green); }
+.card .top { display: flex; justify-content: space-between; align-items: center; }
+.badge { padding: 12px 34px; border-radius: 999px; background: var(--c); color: #fff; font-size: 30px; font-weight: 700; }
+.time { font-size: 28px; color: var(--muted); font-weight: 600; }
+.card h3 { margin: 34px 0 0; font-size: 38px; line-height: 1.35; font-weight: 800; letter-spacing: -0.03em; white-space: nowrap; }
+.card p { margin: 18px 0 0; font-size: 28px; line-height: 1.5; color: var(--muted); }
+
+/* === ENTRANCE ANIMATION === */
+.reveal { opacity: 0; transform: translateY(28px); animation: rise .8s cubic-bezier(.2,.7,.2,1) forwards; }
+@keyframes rise { to { opacity: 1; transform: none; } }
+.d1 { animation-delay: .1s } .d2 { animation-delay: .35s } .d3 { animation-delay: .6s }
+.d4 { animation-delay: .85s } .d5 { animation-delay: 1.05s } .d6 { animation-delay: 1.25s }
+</style>
+</head>
+<body>
+<div class="deck-viewport" id="viewport">
+  <div class="deck-stage" id="stage">
+    <section class="slide active">
+      <div class="wrap">
+        <div class="eyebrow reveal d1">WORKSHOP · PM / BA × GITHUB COPILOT</div>
+        <h1 class="headline reveal d2">요구사항에서 배포까지,<br>GitHub 업무 흐름을 이해하고<br><em>Copilot·Agent 자동화</em>를 내 업무로.</h1>
+        <div class="flow reveal d3">
+          <span class="chip">요구사항</span><span class="arrow">→</span>
+          <span class="chip">개발</span><span class="arrow">→</span>
+          <span class="chip">리뷰</span><span class="arrow">→</span>
+          <span class="chip">배포</span>
+          <span class="auto">+ Copilot / Agent</span>
+        </div>
+
+        <div class="cards">
+          <div class="card s1 reveal d4">
+            <div class="top"><span class="badge">이론 세션 1</span><span class="time">60분</span></div>
+            <h3>GitHub 개발 흐름과<br>품질·보안 관리</h3>
+            <p>개발 흐름부터 요청·결과 확인, 품질·보안 관리와 Actions 자동화까지 살펴봅니다.</p>
+          </div>
+          <div class="card s2 reveal d5">
+            <div class="top"><span class="badge">이론 세션 2</span><span class="time">40분</span></div>
+            <h3>GitHub Copilot과 함께하는<br>새 업무 위임·확인·점검</h3>
+            <p>Copilot·Agent로 요구사항 구현과 보완을 맡기고, 개발 결과와 보안 조치를 확인합니다.</p>
+          </div>
+          <div class="card s3 reveal d6">
+            <div class="top"><span class="badge">실습 세션</span><span class="time">50분</span></div>
+            <h3>이론 세션 2의 내용을<br>직접 실습해봅니다</h3>
+            <p>GitHub Enterprise 환경에서 직접 해보며 체득합니다.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<script>
+/* === SCALE 1920x1080 STAGE TO VIEWPORT === */
+(function () {
+    var stage = document.getElementById('stage');
+    function fit() {
+        var s = Math.min(innerWidth / 1920, innerHeight / 1080);
+        stage.style.transform = 'translate(' + (innerWidth - 1920 * s) / 2 + 'px,' + (innerHeight - 1080 * s) / 2 + 'px) scale(' + s + ')';
+    }
+    addEventListener('resize', fit); fit();
+})();
+</script>
+</body>
+</html>

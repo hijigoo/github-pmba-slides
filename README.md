@@ -1,11 +1,12 @@
 # GitHub 교육 슬라이드
 
-PM/BA를 위한 세션 1·2 발표자료를 보관하는 **비공개 저장소**입니다.
+PM/BA를 위한 워크숍 소개와 세션 1·2 발표자료를 보관하는 **비공개 저장소**입니다.
 
 ## 자료 보기
 
 | 세션 | 자료 |
 | --- | --- |
+| 워크숍 소개 | [워크숍 세션 소개](./workshop-intro.html) |
 | 세션 1 | [GitHub 개발 흐름과 품질·보안](./session-1-github-slides.html) |
 | 세션 2 | [GitHub Copilot 활용](./session-2-copilot-slides.html) |
 
