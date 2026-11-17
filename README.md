@@ -6,7 +6,7 @@ PM/BA를 위한 워크숍 소개와 세션 1·2 발표자료를 보관하는 **�
 
 | 세션 | 자료 |
 | --- | --- |
-| 워크숍 소개 | [워크숍 세션 소개](./workshop-intro.html) |
+| 워크숍 소개 | [워크숍 세션 소개](./index.html) |
 | 세션 1 | [GitHub 개발 흐름과 품질·보안](./session-1-github-slides.html) |
 | 세션 2 | [GitHub Copilot 활용](./session-2-copilot-slides.html) |
 
