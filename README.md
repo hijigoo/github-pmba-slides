@@ -1,6 +1,8 @@
 # GitHub 교육 슬라이드
 
-PM/BA를 위한 워크숍 소개와 세션 1·2 발표자료를 보관하는 **비공개 저장소**입니다.
+PM/BA를 위한 워크숍 소개와 세션 1·2 발표자료를 보관하는 저장소입니다.
+
+**GitHub Pages:** <https://hijigoo.github.io/github-pmba-slides/>
 
 ## 자료 보기
 
@@ -18,4 +20,4 @@ HTML 파일을 다운로드한 뒤 브라우저에서 열면 됩니다. 글꼴·
 
 슬라이드의 사례를 실제 GitHub 기록으로 열어 볼 수 있는 [hijigoo/github-workflow-sample](https://github.com/hijigoo/github-workflow-sample)입니다. 가상 문의 조회 요구사항, PR, 리뷰, 검증, 배포, 릴리스 기록을 보여 주는 읽기용 샘플입니다.
 
-원본 고객 자료·백업·세션 내부 파일은 포함하지 않습니다. GitHub Pages 공개 배포는 사용하지 않습니다.
+원본 고객 자료·백업·세션 내부 파일은 포함하지 않습니다.
