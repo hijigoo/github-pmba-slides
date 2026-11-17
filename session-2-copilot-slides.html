@@ -1166,7 +1166,7 @@ h1,h2,h3,p { margin:0; }
 .delegation-pr-merge-bottom p { margin:0; color:#59636e; font-size:16px; }
 .delegation-pr-merge-btn { padding:6px 12px; border-radius:6px; background:#e6ebe8; color:#8c959f; font-size:17px; font-weight:700; }
 .delegation-pr-merge-btn i { font-style:normal; margin-left:10px; padding-left:10px; border-left:1px solid #c9d1d9; }
-.delegation-review-slide .delegation-pr-window { height:560px; }
+.delegation-review-slide .delegation-pr-window { height:495px; }
 .delegation-review-slide .delegation-pr-main { padding:14px 22px; }
 .delegation-review-slide .delegation-pr-tabs { margin-top:9px; }
 .delegation-review-slide .security-pr-linked { margin-top:8px; padding:6px 12px; }
@@ -1763,24 +1763,24 @@ html[data-editing="true"] [contenteditable="true"] {
             <p class="issue-compare-head">구현을 맡길지 결정</p>
             <div class="issue-choice"><h3>기록·조사만 할 때</h3><p class="editable">Issue로 남기고 사람이 판단합니다. <strong>Copilot 할당은 필수가 아닙니다.</strong></p></div>
             <div class="issue-choice"><h3>구현까지 필요할 때</h3><p class="editable">Assignees에 Copilot을 지정합니다. <strong>작업 PR #47을 열어 검토를 요청</strong>합니다.</p></div>
-            <p class="issue-note editable">Copilot 할당 뒤 PR #47이 열립니다. 다음 장에서 검사 실행 승인과 결과 확인을 봅니다.</p>
+            <p class="issue-note editable">Copilot 할당 뒤 PR #47이 열립니다. 다음 장에서 검사 결과 확인을 봅니다.</p>
           </div>
         </div>
       </div>
       <footer class="cover-footer"><span>가상 Issue #46 · 구현할 때 Copilot 할당 → PR #47</span><b class="page-number"></b></footer>
       <aside class="speaker-notes" hidden></aside>
     </section>
-    <section class="slide delegation-review-slide" id="delegation-pr-final-check" data-source="delegationReview" aria-label="Issue 46의 가상 PR 47에서 워크플로 실행을 승인하고 결과를 최종 확인하는 화면">
+    <section class="slide delegation-review-slide" id="delegation-pr-final-check" data-source="delegationReview" aria-label="Issue 46의 가상 PR 47에서 검사 결과를 확인하는 화면">
       <header class="cover-header">
         <div class="brand">GITHUB <span>COPILOT</span></div>
         <div class="audience">업무 담당자 / SESSION 02</div>
       </header>
       <div class="delegation-review-body">
-        <p class="walk-kicker">SESSION B · PR 검사 승인·최종 확인</p>
-        <h2 class="editable">검사 실행을 승인하고 결과를 최종 확인해요</h2>
-        <p class="walk-intro editable">Issue #46을 GitHub Copilot에 할당해 열린 가상 PR #47입니다. 필요한 검사 실행을 승인한 뒤 결과를 확인합니다.</p>
+        <p class="walk-kicker">SESSION B · PR 검사 결과·최종 확인</p>
+        <h2 class="editable">검사 결과를 확인하고 최종 확인해요</h2>
+        <p class="walk-intro editable">Issue #46을 GitHub Copilot에 할당해 열린 가상 PR #47입니다. 검사 결과와 변경 내용을 확인합니다.</p>
         <div class="delegation-review-grid">
-          <div class="github-window delegation-pr-window" aria-label="교육용 가상 GitHub Issue 46에서 열린 Draft Pull request 47과 워크플로 실행 승인 화면">
+          <div class="github-window delegation-pr-window" aria-label="교육용 가상 GitHub Issue 46에서 열린 Draft Pull request 47 화면">
             <div class="github-topbar"><strong class="github-wordmark">GitHub</strong><span class="github-repo">example-org / customer-support-portal</span></div>
             <div class="github-tabs"><span>Code</span><span>Issues</span><strong>Pull requests</strong><span>Actions</span><span>Security and quality</span></div>
             <div class="delegation-pr-main">
@@ -1788,20 +1788,19 @@ html[data-editing="true"] [contenteditable="true"] {
               <div class="delegation-pr-state"><span class="delegation-pr-draft">Draft</span><p>Copilot이 feature/pending-count → dev 병합을 요청했습니다.</p></div>
               <div class="delegation-pr-tabs"><strong>Conversation 2</strong><span>Commits 1</span><span>Checks 0</span><span>Files changed 3</span></div>
               <div class="security-pr-linked"><span>Related issue · #46</span><strong>미처리 상담 건수 표시</strong></div>
-              <div class="delegation-pr-checks"><div><strong>워크플로 실행 승인 대기</strong><p>저장소 설정에 따라 검토 후 실행 승인이 필요할 수 있습니다.</p></div><span class="delegation-pr-check-cta">Approve workflows to run</span></div>
               <div class="delegation-pr-merge"><div class="delegation-pr-merge-top"><div><strong>This pull request is still a work in progress</strong><p>Draft pull requests cannot be merged.</p></div><span class="delegation-pr-ready">Ready for review</span></div><div class="delegation-pr-merge-bottom"><span class="delegation-pr-merge-btn">Merge pull request <i>▾</i></span><p>Draft 해제·검사·검토 뒤 병합할 수 있습니다.</p></div></div>
             </div>
           </div>
           <div class="delegation-review-side">
-            <h3>승인 후 최종 확인</h3>
-            <div class="delegation-review-point"><span>01</span><div><h4>변경 먼저 살피기</h4><p class="editable">승인 전 Files changed와 워크플로를 확인합니다.</p></div></div>
-            <div class="delegation-review-point"><span>02</span><div><h4>검사 실행 승인</h4><p class="editable">필요할 때 Approve workflows to run으로 실행합니다.</p></div></div>
-            <div class="delegation-review-point"><span>03</span><div><h4>결과 최종 확인</h4><p class="editable">Checks·Actions와 미처리·완료 상태 동작을 대조합니다.</p></div></div>
-            <p class="delegation-review-note editable">워크플로 승인 ≠ PR 승인·병합. 검사 뒤 요구사항과 결과를 사람이 최종 판단합니다.</p>
+            <h3>PR 최종 확인</h3>
+            <div class="delegation-review-point"><span>01</span><div><h4>변경 먼저 살피기</h4><p class="editable">Files changed와 워크플로를 먼저 확인합니다.</p></div></div>
+            <div class="delegation-review-point"><span>02</span><div><h4>검사 결과 확인</h4><p class="editable">Checks·Actions에서 검사 통과 여부를 확인합니다.</p></div></div>
+            <div class="delegation-review-point"><span>03</span><div><h4>동작 최종 확인</h4><p class="editable">미처리·완료 상태 동작을 요구사항과 대조합니다.</p></div></div>
+            <p class="delegation-review-note editable">검사 통과 ≠ PR 승인·병합. 요구사항과 결과를 사람이 최종 판단합니다.</p>
           </div>
         </div>
       </div>
-      <footer class="cover-footer"><span>가상 Issue #46 → Draft PR #47 · 검사 실행 승인 → 최종 확인</span><b class="page-number"></b></footer>
+      <footer class="cover-footer"><span>가상 Issue #46 → Draft PR #47 · 검사 결과 → 최종 확인</span><b class="page-number"></b></footer>
       <aside class="speaker-notes" hidden></aside>
     </section>
     <section class="slide session-divider" id="session-delivery" data-source="delivery" aria-label="개발 결과 확인 세션 시작">
